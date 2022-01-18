@@ -3,11 +3,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import matplotlib.ticker as mticker
-import subprocess as sp
+import os 
+import wget
 
 def main():
     #データを読み込み
-    sp.call("wget https://raw.githubusercontent.com/Lifengtong1/vacancy_rate_and_population_in_JP_and_USA/main/data/vacancy_rate.csv",shell=True)
+    if os.path.exists('covid-vaccination-vs-death_ratio.csv') is False:
+        output_dir = './'
+        output_file = 'covid-vaccination-vs-death_ratio.csv'
+        assert os.path.exists(output_dir)
+        url = "https://raw.githubusercontent.com/G-Y3/covid-19-vaccination-vs.-mortality/main/src/covid-vaccination-vs-death_ratio.csv"#
+
+        wget.download(url, out = os.path.join(output_dir,output_file))
     df = pd.read_csv("covid-vaccination-vs-death_ratio.csv")
     print('iso code samples:')
     print('Japan: JPN')
