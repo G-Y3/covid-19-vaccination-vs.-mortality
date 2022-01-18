@@ -4,3 +4,11 @@
 ## Data
 Kaggle, Sina Karaji, [COVID vaccination vs. mortality]
 https://www.kaggle.com/sinakaraji/covid-vaccination-vs-death
+
+## How to install
+$pip install vaccinationvsdeath
+
+## How to run
+$vaccinationvsdeath
+
+enter the iso code
